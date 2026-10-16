@@ -356,7 +356,16 @@ function go(id){
     if(soundToggle){
       soundToggle.textContent = state.sound ? "YOQILGAN" : "O‘CHIRILGAN";
     }
+  if(id === "home"){
+    window.scrollTo({top: 0, behavior: "smooth"});
+  }
 
+  window.scrollTo({top: 0, behavior: "smooth"});
+
+  if(typeof sound === "function"){
+    sound("open");
+  }
+}
     const volumeRange = document.getElementById("volumeRange");
     if(volumeRange){
       volumeRange.value = Math.round((state.volume ?? 0.6) * 100);
